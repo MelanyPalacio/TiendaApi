@@ -1,0 +1,17 @@
+version: 1
+backend:
+  phases:
+    build:
+      commands:
+        - mvn clean install -DskipTests
+  artifacts:
+    # Cambia 'my-app' por el nombre de tu aplicación Spring
+    baseDirectory: tienda/target
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - .m2/**/*
+
+
