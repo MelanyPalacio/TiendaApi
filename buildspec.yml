@@ -1,17 +1,11 @@
-version: 1
-backend:
-  phases:
-    build:
-      commands:
-        - mvn clean install -DskipTests
-  artifacts:
-    # Cambia 'my-app' por el nombre de tu aplicación Spring
-    baseDirectory: tienda/target
-    files:
-      - '**/*'
-  cache:
-    paths:
-      - node_modules/**/*
-      - .m2/**/*
+version: 0.2
 
+phases:
+  build:
+    commands:
+      # Comandos de construcción de tu backend, por ejemplo, para compilar y empaquetar tu aplicación Spring
+      - mvn clean install -DskipTests
 
+artifacts:
+  files:
+    - 'tienda/target/**/*'
